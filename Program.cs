@@ -3,7 +3,7 @@ using StackExchange.Redis;
 
 Console.WriteLine("Hello, World!");
 // Connection to the Redis server
-var redisConnection = ConnectionMultiplexer.Connect("localhost");
+var redisConnection = ConnectionMultiplexer.Connect("192.168.240.11");
 
 // Get a reference to the Redis database
 var redisDatabase = redisConnection.GetDatabase();
@@ -32,7 +32,7 @@ async Task ReadMessagesFromStream(IDatabase redisDatabase, string streamName)
     // Process the entries
     foreach (var entry in entries)
     {
-        Console.WriteLine($"Message: {entry.Values.First(v => v.Name == "message").Value}");
+        Console.WriteLine($"Message: {entry.Values.First(v => v.Name == "Message1").Value}");
     }
 }
 
